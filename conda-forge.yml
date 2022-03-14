@@ -5,3 +5,6 @@ provider:
   linux_aarch64: default
 bot:
   automerge: true
+github:
+  branch_name: main
+  tooling_branch_name: main
