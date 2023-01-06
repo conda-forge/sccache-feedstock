@@ -1,12 +1,10 @@
-conda_forge_output_validation: true
-linux_aarch64:
-  enabled: true
-provider:
-  linux_aarch64: default
 bot:
-  automerge: true
-github:
-  branch_name: main
-  tooling_branch_name: main
-conda_build:
-  pkg_format: '2'
+   automerge: true
+ build_platform:
+   osx_arm64: osx_64
+ conda_forge_output_validation: true
+ linux_aarch64:
+   enabled: true
+ provider:
+   linux_aarch64: default
+ test_on_native_only: true
