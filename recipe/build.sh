@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -o xtrace -o nounset -o pipefail -o errexit
+set -euxo pipefail
 
 # build statically linked binary with Rust
 cargo install --features=all --root "$PREFIX" --path .
