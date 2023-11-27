@@ -1,5 +1,5 @@
 :: build
-cargo install --features=all --root "%PREFIX%" --path . || goto :error
+cargo install --locked --features=all --root "%PREFIX%" --path . || goto :error
 
 :: strip debug symbols
 strip "%PREFIX%\bin\sccache.exe" || goto :error
