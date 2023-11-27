@@ -3,7 +3,7 @@
 set -o xtrace -o nounset -o pipefail -o errexit
 
 # build statically linked binary with Rust
-cargo install --features=all --root "$PREFIX" --path .
+cargo install --locked --features=all --root "$PREFIX" --path .
 
 # strip debug symbols
 "$STRIP" "$PREFIX/bin/sccache"
