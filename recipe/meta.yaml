@@ -1,4 +1,4 @@
-{% set version = "0.7.6" %}
+{% set version = "0.7.7" %}
 
 package:
   name: sccache
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mozilla/sccache/archive/v{{ version }}.tar.gz
-  sha256: c6ff8750516fe982c9e9c20fb80d27c41481a22bf9a5a2346cff05724110bd42
+  sha256: a5f5dacbc8232d566239fa023ce5fbc803ad56af2910fa1558b6e08e68e067e0
 
 build:
   number: 0
