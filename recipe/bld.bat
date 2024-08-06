@@ -7,6 +7,7 @@ cargo install --locked --features=all --root "%PREFIX%" --path . || goto :error
 
 :: remove extra build file
 del /F /Q "%PREFIX%\.crates.toml"
+del /F /Q "%PREFIX%\.crates2.json"
 
 :: generate licenses
 cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
