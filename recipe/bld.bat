@@ -7,6 +7,9 @@ strip "%PREFIX%\bin\sccache.exe" || goto :error
 :: remove extra build file
 del /F /Q "%PREFIX%\.crates.toml"
 
+:: generate licenses
+cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+
 goto :EOF
 
 :error
