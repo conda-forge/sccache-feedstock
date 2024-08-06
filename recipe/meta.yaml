@@ -20,7 +20,7 @@ requirements:
     - {{ stdlib("c") }}
     - cargo-bundle-licenses
   host:
-    - openssl  #[linux]
+    - openssl  # [linux]
 
 test:
   commands:
