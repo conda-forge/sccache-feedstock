@@ -20,7 +20,6 @@ requirements:
   build:
     - rust
     - ${{ compiler('c') }}
-    - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - cargo-bundle-licenses
   host:
