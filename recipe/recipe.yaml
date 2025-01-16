@@ -1,47 +1,50 @@
-{% set version = "0.8.2" %}
+context:
+  version: 0.8.2
 
 package:
   name: sccache
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/mozilla/sccache/archive/v{{ version }}.tar.gz
+  url: https://github.com/mozilla/sccache/archive/v${{ version }}.tar.gz
   sha256: 2b3e0ef8902fe7bcdcfccf393e29f4ccaafc0194cbb93681eaac238cdc9b94f8
 
 build:
-  number: 0
-  missing_dso_whitelist:   # [osx]
-    - /usr/lib/libresolv.9.dylib  # [osx]
+  number: 1
+  dynamic_linking:
+    missing_dso_allowlist:
+      - if: osx
+        then: /usr/lib/libresolv.9.dylib
 
 requirements:
   build:
-    - rust
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
     - cargo-bundle-licenses
   host:
-    - openssl  # [linux]
+    - if: linux
+      then: openssl
 
-test:
-  commands:
-    - sccache --version
-    - sccache --help
+tests:
+  - script:
+      - sccache --version
+      - sccache --help
 
 about:
-  home: https://github.com/mozilla/sccache
   summary: sccache is ccache with cloud storage
   license: Apache-2.0
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-  license_family: APACHE
   description: |
     Sccache is a ccache-like tool. It is used as a compiler wrapper and avoids
     compilation when possible, storing a cache in a remote storage using the
     Amazon Simple Cloud Storage Service (S3) API, the Google Cloud Storage (GCS) API,
     or Redis.
-  doc_url: https://github.com/mozilla/sccache
-  dev_url: https://github.com/mozilla/sccache
+  homepage: https://github.com/mozilla/sccache
+  repository: https://github.com/mozilla/sccache
+  documentation: https://github.com/mozilla/sccache
 
 extra:
   recipe-maintainers:

@@ -18,7 +18,6 @@ compilation when possible, storing a cache in a remote storage using the
 Amazon Simple Cloud Storage Service (S3) API, the Google Cloud Storage (GCS) API,
 or Redis.
 
-
 Current build status
 ====================
 
