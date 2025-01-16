@@ -18,9 +18,9 @@ build:
 
 requirements:
   build:
-    - rust
+    - ${{ compiler('rust') }}
     - ${{ compiler('c') }}
-    - ${{ stdlib("c") }}
+    - ${{ stdlib('c') }}
     - cargo-bundle-licenses
   host:
     - if: linux
