@@ -1,5 +1,5 @@
 context:
-  version: "0.12.0"
+  version: "0.13.0"
 
 package:
   name: sccache
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mozilla/sccache/archive/v${{ version }}.tar.gz
-  sha256: 309edaf43f44088e55e99ce14eb9cfdee8f85acad290171ebfd29eb9e368def3
+  sha256: cc93c603b938f7444c180c049ce9d983e6b08eb2a0d44973b4794508589f891c
 
 build:
   number: 0
