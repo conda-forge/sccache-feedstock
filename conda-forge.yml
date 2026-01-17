@@ -2,9 +2,10 @@ bot:
   automerge: true
 build_platform:
   osx_arm64: osx_64
+conda_build_tool: rattler-build
 conda_forge_output_validation: true
+conda_install_tool: pixi
 provider:
   linux_aarch64: emulated
+  linux_ppc64le: default
 test: native_and_emulated
-conda_install_tool: pixi
-conda_build_tool: rattler-build
