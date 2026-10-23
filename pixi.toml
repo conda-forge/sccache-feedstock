@@ -5,7 +5,7 @@
 
 [workspace]
 name = "sccache-feedstock"
-version = "2026.9.19"  # conda-smithy version used to generate this file
+version = "2026.10.21"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/sccache-feedstock"
 authors = ["@conda-forge/sccache"]
 channels = ["conda-forge"]
@@ -64,6 +64,15 @@ description = "Debug sccache-feedstock with variant linux_ppc64le_ directly (wit
 [feature.build.tasks."inspect-linux_ppc64le_"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_.yaml"
 description = "List contents of sccache-feedstock packages built for variant linux_ppc64le_"
+[feature.build.tasks."build-linux_riscv64_"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_riscv64_.yaml --target-platform linux-riscv64"
+description = "Build sccache-feedstock with variant linux_riscv64_ directly (without setup scripts)"
+[feature.build.tasks."debug-linux_riscv64_"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_riscv64_.yaml --target-platform linux-riscv64"
+description = "Debug sccache-feedstock with variant linux_riscv64_ directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_riscv64_"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_riscv64_.yaml"
+description = "List contents of sccache-feedstock packages built for variant linux_riscv64_"
 [feature.build.tasks."build-osx_64_"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_.yaml --target-platform osx-64"
 description = "Build sccache-feedstock with variant osx_64_ directly (without setup scripts)"
