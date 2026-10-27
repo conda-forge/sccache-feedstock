@@ -10,7 +10,7 @@ source:
   sha256: 14e37fc2cb4f21c188789d518e170181b7cd1ba523152880cdf8009269d79732
 
 build:
-  number: 0
+  number: 1
   dynamic_linking:
     missing_dso_allowlist:
       - if: osx
